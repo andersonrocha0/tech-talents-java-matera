@@ -4,33 +4,23 @@
 
 ### 1.1 - O que é lógica de programação?
 
-* Lógica de programação é a técnica de encadear pensamentos para atingir determinado
-objetivo.
+* Lógica de programação é a técnica de encadear pensamentos para atingir determinado objetivo.
 
 ### 1.2 - O que é sequência lógica?
 
-* Seqüência Lógica são passos executados até atingir um objetivo ou solução de um
-problema.
+* Seqüência Lógica são passos executados até atingir um objetivo ou solução de um problema.
 
 ### 1.3 - O que são instruções?
 
-* Na linguagem comum, entende-se por instruções **“um conjunto de regras ou normas
-definidas para a realização ou emprego de algo”.**
+* Na linguagem comum, entende-se por instruções **“um conjunto de regras ou normas definidas para a realização ou emprego de algo”.**
 
 ### 1.4 - O que é algoritmo?
 
-* Um algoritmo é formalmente uma seqüência finita de passos que levam a execução de uma
-tarefa. Podemos pensar em algoritmo como uma receita, uma seqüência de instruções que dão
-cabo de uma meta específica. Estas tarefas não podem ser redundantes nem subjetivas na sua
-definição, devem ser claras e precisas.
+* Um algoritmo é formalmente uma seqüência finita de passos que levam a execução de uma tarefa. Podemos pensar em algoritmo como uma receita, uma seqüência de instruções que dão cabo de uma meta específica. Estas tarefas não podem ser redundantes nem subjetivas na sua definição, devem ser claras e precisas.
 
 ### 1.5 - O que é um programa?
 
-* Os programas de computadores nada mais são do que algoritmos escritos numa linguagem de
-computador (Java, Python, JavaScript, PHP, C entre outras) e que são interpretados e
-executados por uma máquina, no caso um computador. Notem que dada esta interpretação
-rigorosa, um programa é por natureza muito específico e rígido em relação aos algoritmos da vida
-real.
+* Os programas de computadores nada mais são do que algoritmos escritos numa linguagem de computador (Java, Python, JavaScript, PHP, C entre outras) e que são interpretados e executados por uma máquina, no caso um computador. Notem que dada esta interpretação rigorosa, um programa é por natureza muito específico e rígido em relação aos algoritmos da vida real.
 
 <hr/>
 
@@ -38,8 +28,7 @@ real.
 
 ### 2.1 - O que são variáveis?
 
-* Uma variável é
-um espaço reservado na memória do computador para armazenar um tipo de dado determinado.
+* Uma variável é um espaço reservado na memória do computador para armazenar um tipo de dado determinado.
 
 ### 2.2 - Quais os tipos de variáveis que temos no Java?
 
@@ -57,7 +46,7 @@ um espaço reservado na memória do computador para armazenar um tipo de dado de
 
 ## 3 - Exercícios
 
-1. Escreva um algoritmo que armazene o valor 99 em uma variável Y e o valor 11 em uma variável Z. A seguir (utilizando apenas atribuições entre variáveis) troque os seus conteúdos fazendo com que o valor que está em Y passe para Z e vice-versa. Ao final, escrever os valores que ficaram armazenados nas variáveis
+1. Escreva um algoritmo que armazene o valor 99 em uma variável Y e o valor 11 em uma variável Z. A seguir (utilizando apenas atribuições entre variáveis) troque os seus conteúdos fazendo com que o valor que está em Y passe para Z e vice-versa. Ao final, escrever os valores que ficaram armazenados nas variáveis.
 
 2. Escreva um algoritmo para ler um valor (do teclado) e escrever (na tela) o seu antecessor.
     1. Vamos aprender a recuperar valores nos nossos programas Java?
@@ -80,7 +69,7 @@ um espaço reservado na memória do computador para armazenar um tipo de dado de
     ```
 
 3. Escreva um algoritmo para ler as dimensões de um retângulo (base e altura), calcular e escrever a área do retângulo.
-    1. [Como calcular a área de um retângulo](https://www.todamateria.com.br/area-do-retangulo/)
+    1. [Como calcular a área de um retângulo](https://www.todamateria.com.br/area-do-retangulo/).
 
 4. Escreva um algoritmo para ler o número total de eleitores de um município, o número de votos brancos, nulos e válidos. Calcular e escrever o percentual que cada um representa em relação ao total de eleitores.
 
