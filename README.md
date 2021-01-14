@@ -73,4 +73,4 @@
 - Projeto Prático, Criando apis com Spring MVC
 
 ## 8° Semana - Spring Data + Projeto final
-- O intuito desta última semana, é passarmos pelo spring data e mostrarmos como podemos utilizá-lo em conjunto com o Spring MVC e construir um pequeno projeto juntos utilizando todos os conceitos aprendidos até agora.
+- O intuito desta última semana, é passarmos pelo spring data e mostrarmos como podemos utilizá-lo em conjunto com o Spring MVC e construir um pequeno projeto juntos utilizando todos os conceitos aprendidos até agora.'' 
