@@ -1,4 +1,4 @@
-# Dia 2
+# Dia 3
 
 ## Resolução exercícios
  
