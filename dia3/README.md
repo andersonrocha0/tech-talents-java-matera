@@ -29,7 +29,7 @@ switch (dia) {
   case 1:
     System.out.println("Segunda");
     break;
-  case 2:Relacionais
+  case 2:
     System.out.println("Terça");
     break;
   case 3:
@@ -112,7 +112,7 @@ System.out.println(i);
 ```
 
 ```java
-// O símbolo de "%" é o nosso operador de módulo.```
+// O símbolo de "%" é o nosso operador de módulo.
 double i = 59 % 6;
 System.out.println(i);
 // 5
@@ -222,9 +222,9 @@ System.out.println(!1 == 2);
     * Encontre o menor valor
     * Calcule a média dos números lidos
 
-5. Escreva um algoritmo em Java que seja capaz de fazer as seguintes operações matemática (adição, subtração, multiplicação e divisão). Todas as operações serão entre dois valores. No começo do algoritmo pergunte ao usuário qual operação ele deseja fazer e quais são os valores.
+5. Escreva um algoritmo em Java que seja capaz de fazer as seguintes operações matemáticas (adição, subtração, multiplicação e divisão). Todas as operações serão entre dois valores. No começo do algoritmo pergunte ao usuário qual operação ele deseja fazer e quais são os valores.
 
-6. Faça a implementação do Jogo Pedra, Papel e Tesoura (Jokempô). O algoritmo deverá perguntar qual é a escolha do jogador 1 (Pedra [pe], Papel [pa], Tesoura [t]) e deverá fazer o mesmo para o jogador 2. No final da execução o algoritmo deverá dizer qual é o jogador vencedor ou https://www.seduc.ce.gov.br/wp-content/uploads/sites/37/2012/06/informatica_logica_de_programacao.pdf
+6. Faça a implementação do Jogo Pedra, Papel e Tesoura (Jokempô). O algoritmo deverá perguntar qual é a escolha do jogador 1 (Pedra [pe], Papel [pa], Tesoura [t]) e deverá fazer o mesmo para o jogador 2. No final da execução o algoritmo deverá dizer qual é o jogador vencedor ou se houve empate.
 
 ## Referências
 
