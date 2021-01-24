@@ -173,7 +173,7 @@ Vaga vaga = new Vaga();
    * Sai : para remover uma pessoa do elevador (só deve remover se houver alguém dentro dele);
    * Sobe : para subir um andar (não deve subir se já estiver no último andar);
    * Desce : para descer um andar (não deve descer se já estiver no térreo);
-   Encapsular todos os atributos da classe (criar os métodos set e get).
+   
 
 1. Crie uma classe Televisão e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão. O controle de volume permite:
 
