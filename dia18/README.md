@@ -37,3 +37,8 @@
 * Ao final do exercício é esperado que os alunos tenham tido a oportunidade de praticar os conceitos de POO aprendidos durante a semana. 
 
 * Além disso, esse exercício será utilizado como modelo inicial da nossa avaliação semanal. Isso significa que cada um deverá implementar novas funcionalidades e entregar o exercício em seu GitHub.
+
+
+## 2 - Exercícios
+
+* Escolha uma das considerações e adicione no código implementado em aula hoje. Depois disso, suba a solução para o GitHub e compartilhe o link com os professores. Vocês tem até o dia 08/02;2021 para enviar as soluções.
