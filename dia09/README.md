@@ -4,11 +4,11 @@
 
 ### 1 - Classe
 
-* Embora Programação orientada a objetos(POO) tenha objeto em seu nome, tudo começa com a definição de uma classe.
+* Embora Programação orientada a objetos (POO) tenha objeto em seu nome, tudo começa com a definição de uma classe.
 
 * È com ela que pe possível manipular objetos,  pois é a unidade minima e inicial da orientação a objetos.
 
-* A definição de classe segue como: *Classe é uma estrutura que abstrai um conjunto de objetos com características  similareivos.  Uma  classe  define  o  comportamento  de seus objetos através de métodos e os estados possíveis destes objetos através  de  atributos.  Em  outros  termos,  uma  classe  descreve  os serviços  providos  por  seus  objetos  e  quais  informações  eles  podem armazenar.*
+* A definição de classe segue como: *Classe é uma estrutura que abstrai um conjunto de objetos com características  similares.  Uma  classe  define  o  comportamento  de seus objetos através de métodos e os estados possíveis destes objetos através  de  atributos.  Em  outros  termos,  uma  classe  descreve  os serviços  providos  por  seus  objetos  e  quais  informações  eles  podem armazenar.*
 
 * O objetivo de uma classe tem como objetivo servir de base para que irá ser um objeto. Através dela, criamos um "molde", com que os objetos deverão seguir, definindo quais informações, serão trabalhadas e como elas serão manipuladas.
 
@@ -40,7 +40,7 @@ class Vaga {
 }
 ````
 
-### 3 - Metodo
+### 3 - Método
 
 * Tendo identificado a classe e seus atributos, a seguinte pergunta que fica é: o que posso fazer com eles? Como utilizar a classe e estes atributos ?
 
@@ -64,7 +64,7 @@ class Vaga {
         this.setor = setor;
     }
 
-    String getsetor() {
+    String getSetor() {
         return this.setor;
     }
 
@@ -94,7 +94,7 @@ class Vaga {
 
 * Muitas vezes métodos trabalham entre si para realizar seus comportamentos.
 
-* Além destes metodos, independente da quantidade e da finalidade dos metodos de uma classe, existe um especial que toda classe possui: **o construtor**.
+* Além destes métodos, independente da quantidade e da finalidade dos métodos de uma classe, existe um especial que toda classe possui: **o construtor**.
 
 * È a partir do construtor que é possível criar objetos. A partir da classe em questão. Ou seja, sempre que for necessário criar objetos de uma determinada classe. seu construtor deverá ser utilizado. È através dele que é possível instanciar um objeto.
 
@@ -110,14 +110,14 @@ class Vaga {
 
      // construtor
     Vaga() {
-         // impelemntação desejada
+         // implementação desejada
      }
 
     void setSetor(String setor) {
         this.setor = setor;
     }
 
-    String getsetor() {
+    String getSetor() {
         return this.setor;
     }
 
@@ -158,7 +158,7 @@ Vaga vaga = new Vaga();
 
 1. Crie uma classe para representar uma pessoa, com os atributos  de nome, data de nascimento e altura. Crie e também um método para imprimir todos dados de uma pessoa. Crie um método para calcular a idade da pessoa.
 
-1. Crie uma classe Agenda que pode armazenar 10 pessoas e que seja capaz de realizar as seguintes operações:
+2. Crie uma classe Agenda que pode armazenar 10 pessoas e que seja capaz de realizar as seguintes operações:
 
    * void armazenaPessoa(String nome, int idade, float altura);
    * void removePessoa(String nome);
@@ -166,7 +166,7 @@ Vaga vaga = new Vaga();
    * void imprimeAgenda(); // imprime os dados de todas as pessoas da agenda
    * void imprimePessoa(int index); // imprime os dados da pessoa que está na posição “i” da agenda.
 
-1. Crie uma classe denominada Elevador para armazenar as informações de um elevador dentro de um prédio. A classe deve armazenar o andar atual (térreo = 0), total de andares no prédio (desconsiderando o térreo), capacidade do elevador e quantas pessoas estão presentes nele. A classe deve também disponibilizar os seguintes métodos:
+3. Crie uma classe denominada Elevador para armazenar as informações de um elevador dentro de um prédio. A classe deve armazenar o andar atual (térreo = 0), total de andares no prédio (desconsiderando o térreo), capacidade do elevador e quantas pessoas estão presentes nele. A classe deve também disponibilizar os seguintes métodos:
 
    * Inicializa : que deve receber como parâmetros a capacidade do elevador e o total de andares no prédio (os elevadores sempre começam no térreo e vazio);
    * Entra : para acrescentar uma pessoa no elevador (só deve acrescentar se ainda houver espaço);
@@ -175,7 +175,7 @@ Vaga vaga = new Vaga();
    * Desce : para descer um andar (não deve descer se já estiver no térreo);
    
 
-1. Crie uma classe Televisão e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão. O controle de volume permite:
+4. Crie uma classe Televisão e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão. O controle de volume permite:
 
    * aumentar ou diminuir a potência do volume de som em uma unidade de cada vez;
    * aumentar e diminuir o número do canal em uma unidade

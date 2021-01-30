@@ -34,7 +34,7 @@ System.out.println(diasDaSemana[3]);
 System.out.println(diasDaSemana[4]);
 System.out.println(diasDaSemana[5]);
 System.out.println(diasDaSemana[6]);
-// Resultado (dependendo da forma como o arrayfoi criado): 
+// Resultado (dependendo da forma como o array foi criado): 
 null ou Domingo
 null ou Segunda
 null ou Terça
@@ -46,14 +46,14 @@ null ou Sábado
 
 * Para preenchermos um array devemos dizer em qual posição iremos preencher o valor;
 ````java
-// caso o array tenha sido criado ja inicializando os valores não é nescessário este passo
+// caso o array tenha sido criado ja inicializando os valores não é necessário este passo
 diasDaSemana[0] = "Domingo";
 diasDaSemana[1] = "Segunda";
 diasDaSemana[2] = "Terça";
 diasDaSemana[3] = "Quarta";
 diasDaSemana[4] = "Quinta";
 diasDaSemana[5] = "Sexta";
-diasDaSemana[6] = "Sabado";
+diasDaSemana[6] = "Sábado";
 ````
 
 * Caso tente acessar ou preencher um indice de array que não existe, ou seja, maior que seu tamanho, irá ser lançado uma exceção. Falaremos sobre exceção em aulas futuras.
@@ -67,8 +67,8 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 7 out
  * Podemos usar a estrutura For para percorrer um array. Ao utilizarmos o for, usamos o tamanho do array com a propriedade length e um contador que comece com 0
 ````java
 for (int indiceArray = 0; indiceArray < diasDaSemana.length; indiceArray++) {
-			System.out.println(diasDaSemana[indiceArray]);
-		}
+    System.out.println(diasDaSemana[indiceArray]);
+}
 // Resultado
 Domingo
 Segunda
@@ -81,8 +81,8 @@ Sabado
 * Existe também uma instrução chamada foreach que é um for mais simplificado, que percorre todo o array.
 ````java
 for (String dia : diasDaSemana) {
-			System.out.println(dia);
-		}
+    System.out.println(dia);
+}
 // Resultado
 Domingo
 Segunda
@@ -127,8 +127,8 @@ diasDaSemana.add("Sabadou");
  * Para percorrer um ArrayList, utilizamos seu metodo size.
 ````java
 for (int indiceArray = 0; indiceArray < diasDaSemana.size(); indiceArray++) {
-			System.out.println(diasDaSemana[indiceArray]);
-		}
+    System.out.println(diasDaSemana[indiceArray]);
+}
 // Resultado
 Domingo
 Segunda
@@ -139,14 +139,9 @@ Sexta
 Sabado
 ````
 
-### 3 - Exercicios
-1. Escreva um algoritmo que leia numeros insira em um array e após mostre os numeros informados na tela.
-2. Escreva um algoritmo que leia numeros, insira em um array e após mostre a quantidade de numeros negativos.
-3. Escreva um algoritmo que leia numeros, insira em um array e após mostre a quantidade de numeros pares.
-4. Escreva um algoritmo que leia numeros, insira em um array e após mostre o maior valor.
-5. Escreva um algoritmo que simula um jogo da forca simples. o usuario precisara adivinhar uma palavra chutando cada letra em no máximo 10 chutes, caso o usuario acerte a letra o jogo dira que ele acertou, caso tenha errado, o numero de tentativas vai dinimuindo. Caso o numero de tentativas chegue a 0 o usuário perde.
-
-
- 
-    
-	
+### 3 - Exercícios
+1. Escreva um algoritmo que leia números insira em um array e após mostre os números informados na tela.
+2. Escreva um algoritmo que leia números, insira em um array e após mostre a quantidade de números negativos.
+3. Escreva um algoritmo que leia números, insira em um array e após mostre a quantidade de números pares.
+4. Escreva um algoritmo que leia números, insira em um array e após mostre o maior valor.
+5. Escreva um algoritmo que simula um jogo da forca simples. o usuario precisara adivinhar uma palavra chutando cada letra em no máximo 10 chutes, caso o usuario acerte a letra o jogo dirá que ele acertou, caso tenha errado, o numero de tentativas vai diminuindo. Caso o numero de tentativas chegue a 0 o usuário perde.
