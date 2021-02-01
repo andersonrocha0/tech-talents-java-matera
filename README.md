@@ -53,6 +53,7 @@
 - Fundamentos Web (HTTP & Servlets)
 - Verbos HTTP
 - Models
+- Paginas dinamicas com JSP
 - Deploy de aplicação
 - Testes com JUnit
 
