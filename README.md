@@ -53,7 +53,7 @@
 - Fundamentos Web (HTTP & Servlets)
 - Verbos HTTP
 - Models
-- Web Services e JSON 
+- Web Services e JSON - Inicio
 - Deploy de aplicação
 - Testes com JUnit
 
@@ -62,7 +62,7 @@
 - Models e Controllers
 - Integrando com view
 - Trabalhando com sessão
-
+- Web Services e JSON 
 - Projeto Prático de formulário de login
 
 ## 7° Semana - Spring MVC e Apis (Prof. Anderson)
