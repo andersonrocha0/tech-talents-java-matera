@@ -92,8 +92,8 @@
 
 ```sql
 create table contas (
-	id integer,
-	numero varchar
+    id integer,
+    numero varchar
 )
 ```
 
