@@ -6,7 +6,7 @@
   
     * Escreva a classe e forneça os seus membros a seguir: 
     Construtor que inicialize o código ISO, o nome e a dimensão do país;
-    Métodos de acesso (getter/setter) para as propriedades código ISSO, nome, população e dimensão do país; 
+    Métodos de acesso (getter/setter) para as propriedades código ISO, nome, população e dimensão do país; 
     *  Um método que permita verificar se dois objetos representam o mesmo país (igualdade semântica). Dois países são iguais se tiverem o mesmo código ISO;
     * Um método que informe se outro país é limítrofe do país que recebeu a mensagem;
     * Um método que retorne a densidade populacional do país; 
