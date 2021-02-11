@@ -30,6 +30,7 @@ public class ClienteDao implements IDao<Cliente> {
 		insertCliente.executeUpdate();
 
 		ResultSet rsCodigo = insertCliente.getGeneratedKeys();
+		rsCodigo.next();
 		int codigo = rsCodigo.getInt("codigo");
 		model.setCodigo(codigo);
 
