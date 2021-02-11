@@ -6,16 +6,16 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
 
-	private final String url = "jdbc:postgresql://database-1.cvitjixrebr2.us-east-1.rds.amazonaws.com/db_anderson";
-	private final String user = "anderson";
-	private final String password = "anderson2021!";
+	private static final String url = "jdbc:postgresql://database-1.cvitjixrebr2.us-east-1.rds.amazonaws.com/db_anderson";
+	private static final String user = "anderson";
+	private static final String password = "anderson2021!";
 
 	/**
 	 * Connect to the PostgreSQL database
 	 *
 	 * @return a Connection object
 	 */
-	public Connection connect() throws Exception {
+	public static Connection connect() throws Exception {
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(url, user, password);

@@ -97,4 +97,10 @@ public class Cliente {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Cliente [codigo=" + codigo + ", nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", renda=" + renda
+				+ ", telefone=" + telefone + ", email=" + email + "]";
+	}
+
 }
