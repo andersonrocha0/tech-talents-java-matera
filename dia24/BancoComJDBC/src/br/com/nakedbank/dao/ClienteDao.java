@@ -6,12 +6,11 @@ import java.sql.ResultSet;
 
 import br.com.nakedbank.models.Cliente;
 
-public class ClienteDao implements IDao<Cliente> {
+public class ClienteDao extends AbstractDao implements IDao<Cliente> {
 
-	private Connection conn;
 
 	public ClienteDao(Connection conn) {
-		super();
+		super(conn);
 		this.conn = conn;
 	}
 
@@ -27,15 +26,9 @@ public class ClienteDao implements IDao<Cliente> {
 		insertCliente.setString(5, model.getTelefone());
 		insertCliente.setString(6, model.getEmail());
 
-		insertCliente.executeUpdate();
+		int codigo = (Integer) this.saveSQL(insertCliente, "codigo");
 
-		ResultSet rsCodigo = insertCliente.getGeneratedKeys();
-		rsCodigo.next();
-		int codigo = rsCodigo.getInt("codigo");
 		model.setCodigo(codigo);
-
-		rsCodigo.close();
-		insertCliente.close();
 
 		return model;
 
@@ -48,9 +41,7 @@ public class ClienteDao implements IDao<Cliente> {
 		PreparedStatement selectCliente = conn.prepareStatement(query);
 		selectCliente.setInt(1, (Integer) id);
 
-		ResultSet rs = selectCliente.executeQuery();
-
-		rs.next();
+		ResultSet rs = this.getSQL(selectCliente);
 
 		Cliente cliente = new Cliente();
 
@@ -81,9 +72,7 @@ public class ClienteDao implements IDao<Cliente> {
 		updateCliente.setString(6, model.getEmail());
 		updateCliente.setInt(7, (Integer) id);
 
-		updateCliente.executeUpdate();
-
-		updateCliente.close();
+		this.updateSQL(updateCliente);
 
 		return model;
 
@@ -96,9 +85,7 @@ public class ClienteDao implements IDao<Cliente> {
 		PreparedStatement deleteCliente = conn.prepareStatement(query);
 		deleteCliente.setInt(1, (Integer) id);
 
-		deleteCliente.executeUpdate();
-
-		deleteCliente.close();
+		this.deleteSQL(deleteCliente);
 
 	}
 
