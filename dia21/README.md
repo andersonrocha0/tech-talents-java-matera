@@ -26,9 +26,9 @@
 ```sql
 -- Script necessário antes de rodar os exemplos
 create table produtos (
-	codigo serial primary key,
-	descricao varchar,
-	preco decimal
+    codigo serial primary key,
+    descricao varchar,
+    preco decimal
 )
 
 insert into produtos (descricao, preco) values 
@@ -42,8 +42,8 @@ insert into produtos (descricao, preco) values
 
 ---
 create table vendas (
-	codigo serial primary key,
-	data_venda date
+    codigo serial primary key,
+    data_venda date
 )
 
 insert into vendas (data_venda) values 
@@ -52,9 +52,9 @@ insert into vendas (data_venda) values
 
 ---
 create table itens_da_venda (
-	codigo_venda integer,
-	codigo_produto integer,
-	preco decimal
+    codigo_venda integer,
+    codigo_produto integer,
+    preco decimal
 )
 
 
@@ -72,14 +72,14 @@ insert into itens_da_venda (codigo_venda, codigo_produto) values
 ```sql
 -- Exemplo com from
 select
-	*
+    *
 from
-	vendas,
-	itens_da_venda,
-	produtos
+    vendas,
+    itens_da_venda,
+    produtos
 where
-	vendas.codigo = itens_da_venda.codigo_venda
-	and itens_da_venda.codigo_produto = produtos.codigo;
+    vendas.codigo = itens_da_venda.codigo_venda
+    and itens_da_venda.codigo_produto = produtos.codigo;
 ```
 
 ### 2.2 Através de joins
@@ -87,15 +87,15 @@ where
 ```sql
 -- Exemplo com join
 select
-	*
+    *
 from 
-	vendas v
+    vendas v
 join
-	itens_da_venda iv
-	on v.codigo = iv.codigo_venda
+    itens_da_venda iv
+    on v.codigo = iv.codigo_venda
 join
-	produtos p 
-	on p.codigo = iv.codigo_produto;
+    produtos p 
+    on p.codigo = iv.codigo_produto;
 ```
 
 ### 2.3 Tipos de joins
