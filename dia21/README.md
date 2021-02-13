@@ -115,7 +115,99 @@ join
 
 ## 5 Constraints e Foreign Keys
 
-* TODO
+### 5.1 Constraints / Restrições
+
+* Os tipos de dado são uma forma de limitar os dados que podem ser armazenados na tabela. Entretanto, para muitos aplicativos a restrição obtida não possui o refinamento necessário. Por exemplo, uma coluna contendo preços de produtos provavelmente só pode aceitar valores positivos, mas não existe nenhum tipo de dado que aceite apenas números positivos. Um outro problema é que pode ser necessário restringir os dados de uma coluna com relação a outras colunas ou linhas. Por exemplo, em uma tabela contendo informações sobre produtos deve haver apenas uma linha para cada código de produto.
+
+* Para esta finalidade, a linguagem SQL permite definir restrições em colunas e tabelas. As restrições permitem o nível de controle sobre os dados da tabela que for desejado. Se o usuário tentar armazenar dados em uma coluna da tabela violando a restrição, ocorrerá um erro. Isto se aplica até quando o erro é originado pela definição do valor padrão.
+
+#### 5.1.1 Restrições de verificação
+
+* Uma restrição de verificação é o tipo mais genérico de restrição. Permite especificar que os valores de uma determinada coluna devem estar de acordo com uma expressão booleana (valor-verdade [1] ). Por exemplo, para permitir apenas preços com valores positivos utiliza-se:
+
+```sql
+CREATE TABLE produtos (
+    cod_prod   integer,
+    nome       text,
+    preco      numeric CHECK (preco > 0)
+);
+```
+
+
+#### 5.1.2 Restrições de não nulo
+
+* Uma restrição de não-nulo simplesmente especifica que uma coluna não pode assumir o valor nulo. Um exemplo da sintaxe:
+
+```sql
+CREATE TABLE produtos (
+    cod_prod   integer NOT NULL,
+    nome       text    NOT NULL,
+    preco      numeric
+);
+```
+
+#### 5.1.3 Restrições de unicidade
+
+* A restrição de unicidade garante que os dados contidos na coluna, ou no grupo de colunas, é único em relação a todas as outras linhas da tabela. A sintaxe é:
+
+```sql
+CREATE TABLE produtos (
+    cod_prod   integer UNIQUE,
+    nome       text,
+    preco      numeric
+);
+```
+
+#### 5.1.4 Chaves primárias
+
+* Tecnicamente a restrição de chave primária é simplesmente a combinação da restrição de unicidade com a restrição de não-nulo. Portanto, as duas definições de tabela abaixo aceitam os mesmos dados:
+
+```sql
+CREATE TABLE produtos (
+    cod_prod   integer UNIQUE NOT NULL,
+    nome       text,
+    preco      numeric
+);
+
+CREATE TABLE produtos (
+    cod_prod   integer PRIMARY KEY,
+    nome       text,
+    preco      numeric
+);
+```
+
+### 5.2 Chaves Estrangeiras
+
+* A restrição de chave estrangeira especifica que o valor da coluna (ou grupo de colunas) deve corresponder a algum valor existente em uma linha de outra tabela. Diz-se que a chave estrangeira mantém a integridade referencial entre duas tabelas relacionadas.
+
+* Supondo que já temos a tabela de produtos utilizada diversas vezes anteriormente:
+
+```
+CREATE TABLE produtos (
+    cod_prod   integer PRIMARY KEY,
+    nome       text,
+    preco      numeric
+);
+```
+
+* Agora vamos assumir a existência de uma tabela armazenando os pedidos destes produtos. Desejamos garantir que a tabela de pedidos contenha somente pedidos de produtos que realmente existem. Para isso é definida uma restrição de chave estrangeira na tabela de pedidos fazendo referência à tabela de produtos:
+
+```
+CREATE TABLE pedidos (
+    cod_pedido  integer PRIMARY KEY,
+    cod_prod    integer REFERENCES produtos (cod_prod),
+    quantidade  integer
+);
+```
+
+* Isto torna impossível criar um pedido com cod_prod não existente na tabela de produtos.
+
+* Nesta situação é dito que a tabela de pedidos é a tabela que faz referência, e a tabela de produtos é a tabela referenciada. Da mesma forma existem colunas fazendo referência e sendo referenciadas.
+
+**Para verificar mais exemplos acesse: http://pgdocptbr.sourceforge.net/pg80/ddl-constraints.html**
+
+
+<hr>
 
 ## Exercícios
 
