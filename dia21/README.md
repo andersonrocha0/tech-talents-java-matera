@@ -237,3 +237,5 @@ CREATE TABLE pedidos (
 * http://pgdocptbr.sourceforge.net/pg82/tutorial-join.html
 
 * https://www.devmedia.com.br/sql-join-entenda-como-funciona-o-retorno-dos-dados/31006
+
+* http://pgdocptbr.sourceforge.net/pg80/ddl-constraints.html
