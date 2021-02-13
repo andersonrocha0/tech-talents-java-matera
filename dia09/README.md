@@ -96,7 +96,7 @@ class Vaga {
 
 * Além destes métodos, independente da quantidade e da finalidade dos métodos de uma classe, existe um especial que toda classe possui: **o construtor**.
 
-* È a partir do construtor que é possível criar objetos. A partir da classe em questão. Ou seja, sempre que for necessário criar objetos de uma determinada classe. seu construtor deverá ser utilizado. È através dele que é possível instanciar um objeto.
+* É a partir do construtor que é possível criar objetos. A partir da classe em questão. Ou seja, sempre que for necessário criar objetos de uma determinada classe. seu construtor deverá ser utilizado. È através dele que é possível instanciar um objeto.
 
 * Além disto, é possível prover valores iniciais para o objeto em questão.
 

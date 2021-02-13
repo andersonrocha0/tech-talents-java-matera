@@ -182,7 +182,7 @@ CREATE TABLE produtos (
 
 * Supondo que já temos a tabela de produtos utilizada diversas vezes anteriormente:
 
-```
+```sql
 CREATE TABLE produtos (
     cod_prod   integer PRIMARY KEY,
     nome       text,
@@ -192,7 +192,7 @@ CREATE TABLE produtos (
 
 * Agora vamos assumir a existência de uma tabela armazenando os pedidos destes produtos. Desejamos garantir que a tabela de pedidos contenha somente pedidos de produtos que realmente existem. Para isso é definida uma restrição de chave estrangeira na tabela de pedidos fazendo referência à tabela de produtos:
 
-```
+```sql
 CREATE TABLE pedidos (
     cod_pedido  integer PRIMARY KEY,
     cod_prod    integer REFERENCES produtos (cod_prod),
