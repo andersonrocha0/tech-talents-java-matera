@@ -1,18 +1,16 @@
 package br.com.nakedbank.models;
 
-import java.time.LocalDate;
-
 public class Conta {
 
 	private String numero;
 
-	private Float saldo = 0f;
+	private Float saldo;
 
-	private Float chequeEspecial = 0f;
+	private Float chequeEspecial;
 
-	private Boolean status = true;
+	private Boolean status;
 
-	private java.sql.Date dataAbertura = java.sql.Date.valueOf(LocalDate.now());
+	private java.sql.Date dataAbertura;
 
 	private java.sql.Date dataEncerramento;
 

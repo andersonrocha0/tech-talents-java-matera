@@ -1,7 +1,5 @@
 package br.com.nakedbank.models;
 
-import java.time.LocalDate;
-
 public class Transacao {
 
 	public Transacao(Conta conta) {
@@ -11,7 +9,7 @@ public class Transacao {
 
 	private Integer numeroIdentificacao;
 
-	private java.sql.Date dataTransacao = java.sql.Date.valueOf(LocalDate.now());
+	private java.sql.Date dataTransacao;
 
 	private Float valor;
 

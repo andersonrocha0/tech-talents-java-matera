@@ -4,42 +4,44 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import br.com.nakedbank.dtos.AberturaDeContaDto;
 import br.com.nakedbank.models.Cliente;
 
-public class ClienteDao extends AbstractDao implements IDao<Cliente> {
-
+public class ClienteDao extends AbstractDao<Integer>
+		implements IDaoCreate<Cliente, AberturaDeContaDto>, IDaoRead<Cliente, Integer> {
 
 	public ClienteDao(Connection conn) {
 		super(conn);
-		this.conn = conn;
 	}
 
 	@Override
-	public Cliente save(Cliente model) throws Exception {
+	public Cliente save(AberturaDeContaDto aberturaDeContaDto) throws Exception {
 		String query = "insert into contas.tb_cliente (nome, cpf, rg, renda, telefone, email) values (?, ?, ?, ?, ?, ?);";
 
+		int i = 1;
+
 		PreparedStatement insertCliente = conn.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS);
-		insertCliente.setString(1, model.getNome());
-		insertCliente.setString(2, model.getCpf());
-		insertCliente.setString(3, model.getRg());
-		insertCliente.setFloat(4, model.getRenda());
-		insertCliente.setString(5, model.getTelefone());
-		insertCliente.setString(6, model.getEmail());
+		insertCliente.setString(i++, aberturaDeContaDto.getNome());
+		insertCliente.setString(i++, aberturaDeContaDto.getCpf());
+		insertCliente.setString(i++, aberturaDeContaDto.getRg());
+		insertCliente.setFloat(i++, aberturaDeContaDto.getRenda());
+		insertCliente.setString(i++, aberturaDeContaDto.getTelefone());
+		insertCliente.setString(i++, aberturaDeContaDto.getEmail());
 
-		int codigo = (Integer) this.saveSQL(insertCliente, "codigo");
+		int codigo = this.saveSQL(insertCliente, "codigo");
 
-		model.setCodigo(codigo);
+		aberturaDeContaDto.setCodigoCliente(codigo);
 
-		return model;
+		return this.get(codigo);
 
 	}
 
 	@Override
-	public Cliente get(Object id) throws Exception {
+	public Cliente get(Integer codigo) throws Exception {
 		String query = "select * from contas.tb_cliente where codigo = ?";
 
 		PreparedStatement selectCliente = conn.prepareStatement(query);
-		selectCliente.setInt(1, (Integer) id);
+		selectCliente.setInt(1, codigo);
 
 		ResultSet rs = this.getSQL(selectCliente);
 
@@ -57,36 +59,6 @@ public class ClienteDao extends AbstractDao implements IDao<Cliente> {
 		selectCliente.close();
 
 		return cliente;
-	}
-
-	@Override
-	public Cliente update(Object id, Cliente model) throws Exception {
-		String query = "update contas.tb_cliente set nome = ?, cpf = ?, rg = ?,  renda = ?, telefone = ?, email = ? where codigo = ?;";
-
-		PreparedStatement updateCliente = conn.prepareStatement(query);
-		updateCliente.setString(1, model.getNome());
-		updateCliente.setString(2, model.getCpf());
-		updateCliente.setString(3, model.getRg());
-		updateCliente.setFloat(4, model.getRenda());
-		updateCliente.setString(5, model.getTelefone());
-		updateCliente.setString(6, model.getEmail());
-		updateCliente.setInt(7, (Integer) id);
-
-		this.updateSQL(updateCliente);
-
-		return model;
-
-	}
-
-	@Override
-	public void delete(Object id) throws Exception {
-		String query = "delete from contas.tb_cliente where codigo = ?;";
-
-		PreparedStatement deleteCliente = conn.prepareStatement(query);
-		deleteCliente.setInt(1, (Integer) id);
-
-		this.deleteSQL(deleteCliente);
-
 	}
 
 }

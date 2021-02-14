@@ -3,11 +3,14 @@ package br.com.nakedbank.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 
+import br.com.nakedbank.dtos.TransacaoDto;
 import br.com.nakedbank.models.Conta;
 import br.com.nakedbank.models.Transacao;
 
-public class TransacaoDao extends AbstractDao implements IDaoNaoPermiteAlteracao<Transacao> {
+public class TransacaoDao extends AbstractDao<Integer>
+		implements IDaoCreate<Transacao, TransacaoDto>, IDaoRead<Transacao, Integer> {
 
 	private ContaDao contaDao;
 
@@ -17,26 +20,30 @@ public class TransacaoDao extends AbstractDao implements IDaoNaoPermiteAlteracao
 	}
 
 	@Override
-	public Transacao save(Transacao model) throws Exception {
+	public Transacao save(TransacaoDto dto) throws Exception {
 		String query = "insert into contas.tb_transacao (data_transacao, valor, tipo, numero_conta) values (?, ?, ?, ?);";
 
+		int i = 1;
+
+		java.sql.Date dataAtual = java.sql.Date.valueOf(LocalDate.now());
+
 		PreparedStatement insertTransacao = conn.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS);
-		insertTransacao.setDate(1, model.getDataTransacao());
-		insertTransacao.setFloat(2, model.getValor());
-		insertTransacao.setString(3, model.getTipo());
-		insertTransacao.setString(4, model.getConta().getNumero());
+		insertTransacao.setDate(i++, dataAtual);
+		insertTransacao.setFloat(i++, dto.getValor());
+		insertTransacao.setString(i++, dto.getTipo());
+		insertTransacao.setString(i++, dto.getNumeroDaConta());
 
-		this.saveSQL(insertTransacao, "numero_identificacao");
+		int numeroIdentificacao = this.saveSQL(insertTransacao, "numero_identificacao");
 
-		return model;
+		return this.get(numeroIdentificacao);
 	}
 
 	@Override
-	public Transacao get(Object numeroTransacao) throws Exception {
+	public Transacao get(Integer numeroIdentificacao) throws Exception {
 		String query = "select * from contas.tb_transacao where numero_identificacao = ?";
 
 		PreparedStatement selectTransacao = conn.prepareStatement(query);
-		selectTransacao.setString(1, (String) numeroTransacao);
+		selectTransacao.setInt(1, numeroIdentificacao);
 
 		ResultSet rs = this.getSQL(selectTransacao);
 

@@ -4,22 +4,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public abstract class AbstractDao {
+// V é o tipo da chave primária
+
+public abstract class AbstractDao<V> {
 
 	protected Connection conn;
 
 	public AbstractDao(Connection conn) {
-		super();
 		this.conn = conn;
 	}
 
-	public Object saveSQL(PreparedStatement insert, String chavePrimaria) throws Exception {
+	public V saveSQL(PreparedStatement insert, String chavePrimaria) throws Exception {
 
 		insert.executeUpdate();
 
 		ResultSet rsCodigo = insert.getGeneratedKeys();
 		rsCodigo.next();
-		Object obj = rsCodigo.getObject(chavePrimaria);
+		V obj = (V) rsCodigo.getObject(chavePrimaria);
 		rsCodigo.close();
 		insert.close();
 
