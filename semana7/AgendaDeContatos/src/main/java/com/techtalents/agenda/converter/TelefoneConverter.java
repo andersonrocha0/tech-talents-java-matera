@@ -14,6 +14,11 @@ public class TelefoneConverter {
 
 	public Telefone dtoToModel(TelefoneDtoInput telefoneDtoInput) {
 		Telefone telefone = new Telefone();
+		return this.dtoToModel(telefoneDtoInput, telefone);
+
+	}
+
+	public Telefone dtoToModel(TelefoneDtoInput telefoneDtoInput, Telefone telefone) {
 		telefone.setDdd(telefoneDtoInput.getDdd());
 		telefone.setNumero(telefoneDtoInput.getNumero());
 		telefone.setTipo(telefoneDtoInput.getTipo());
