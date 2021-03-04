@@ -38,6 +38,12 @@ public class TelefoneService {
 	}
 
 	public List<TelefoneDtoOutput> getAll() {
+
+		/*
+		 * return this.telefoneRepository.findAll() .stream() .map(
+		 * this.telefoneConverter::modelToDto ) .collect(Collectors.toList());
+		 */
+
 		return this.telefoneConverter.modelToDto(this.telefoneRepository.findAll());
 	}
 
