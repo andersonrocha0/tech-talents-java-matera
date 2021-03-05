@@ -38,6 +38,7 @@ public class EnderecoController {
 	}
 
 	@PostMapping(consumes = "application/json", produces = "application/json")
+	@ResponseStatus(HttpStatus.CREATED)
 	public EnderecoDtoOutput post(@RequestBody EnderecoDtoInput enderecoDtoInput) {
 		return this.enderecoService.create(enderecoDtoInput);
 	}
