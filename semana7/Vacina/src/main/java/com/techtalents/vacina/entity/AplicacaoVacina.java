@@ -14,12 +14,26 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.techtalents.vacina.dto.request.AplicacaoVacinacaoRequest;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 @Entity
 public class AplicacaoVacina {
+
+	public AplicacaoVacina(AplicacaoVacinacaoRequest aplicacaoVacinacaoRequest, Usuario usuario) {
+		this.fillFromDto(aplicacaoVacinacaoRequest);
+		this.setUsuario(usuario);
+	}
+
+	public void fillFromDto(AplicacaoVacinacaoRequest aplicacaoVacinacaoRequest) {
+		this.setDataDaVacina(aplicacaoVacinacaoRequest.getDataDaVacina());
+		this.setNomeDaVacina(aplicacaoVacinacaoRequest.getNomeVacina());
+
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
