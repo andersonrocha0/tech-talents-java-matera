@@ -39,7 +39,7 @@ public class ContatoController {
 
 	@PostMapping(consumes = "application/json", produces = "application/json")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ContatoDtoOutput post(@RequestBody ContatoDtoInput contatoDtoInput) {
+	public ContatoDtoOutput post(@Valid @RequestBody ContatoDtoInput contatoDtoInput) {
 		return this.contatoService.create(contatoDtoInput);
 	}
 
