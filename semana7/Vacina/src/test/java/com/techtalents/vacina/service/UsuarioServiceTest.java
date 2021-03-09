@@ -36,7 +36,7 @@ public class UsuarioServiceTest {
 		String data = "1990-09-28";
 
 		UsuarioRequest usuarioRequest = new UsuarioRequest();
-		usuarioRequest.setCpf("12312312312");
+		usuarioRequest.setCpf("07559309089");
 		usuarioRequest.setDataNascimento(formatter.parse(data));
 		usuarioRequest.setEmail("email@email.com");
 		usuarioRequest.setNome("Anderson Rocha");
