@@ -341,3 +341,9 @@ git log
 * https://git-scm.com/
 
 * https://woliveiras.com.br/posts/introdu%C3%A7%C3%A3o-a-versionamento-de-c%C3%B3digo-e-conhecendo-o-git/#IntroduoaversionamentodecdigoeGit
+
+
+### Para quem quiser saber mais sobre Fork no GitHub
+
+* https://medium.com/@dejaneves/atualizando-seu-fork-do-github-1e2a78ee4cbf
+* http://www.mateuspaduaweb.com.br/atualizar-sincronizar-um-repositorio-forkado-a-partir-do-repositorio-original/
